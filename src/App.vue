@@ -1,6 +1,8 @@
 <template>
-  <Header />
-	<router-view />
+	<div class="container">
+		<Header />
+		<router-view />
+	</div>
 </template>
 
 <script>
@@ -24,6 +26,13 @@ export default {
 }
 
 body {
+	padding: 1em;
 	background-color: #f3f4f6;
+	color: #111827;
+}
+
+.container {
+	margin: 0 auto;
+	max-width: 1024px;
 }
 </style>

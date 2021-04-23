@@ -1,40 +1,32 @@
 <template>
-	<h1>ROT# Generator</h1>
-	<p>
-		Insert your text, and select how many letters forward you would like to shift in the alphabet!
-		Based on the classic ROT13 code generator, I thought it would be nice to allow people to
-		generate a code based on any number of rotation!
-	</p>
-	<p>{{ counter }}</p>
-	<div class="button-group">
-		<button @click="incrementCounter">Increment</button>
-		<button @click="decrementCounter">Decrement</button>
-	</div>
+	<section class="intro-sect">
+		<h1>ROT# Generator</h1>
+		<p>
+			Insert your text, and select how many letters forward you would like to shift in the alphabet!
+			Based on the classic ROT13 code generator, I thought it would be nice to allow people to
+			generate a code based on any number of rotation!
+		</p>
+	</section>
+	<section class="rot-sect">
+		<textarea class="input-field" v-model="input" />
+		<input type="number" min="0" max="26" />
+		<p>{{ input + 'test' }}</p>
+	</section>
 </template>
 
 <script>
-import { ref } from 'vue';
-
 export default {
-	setup() {
-		const counter = ref(0);
-		const incrementCounter = () => counter.value++;
-		const decrementCounter = () => counter.value--;
-
+	data() {
 		return {
-			counter,
-			incrementCounter,
-			decrementCounter,
+			input: '',
 		};
 	},
 };
 </script>
 
 <style scoped>
-.button-group {
-	display: flex;
-	flex-direction: column;
-	gap: 1em;
-	align-items: flex-start;
+.input-field {
+	width: min(100%, 600px);
+	min-height: 200px;
 }
 </style>
