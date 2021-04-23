@@ -1,18 +1,29 @@
 <template>
 	<section class="rot-sect">
-		<textarea class="input-field" v-model="input" />
-		<input v-model.number="rotNum" type="number" min="0" max="26" />
-		<p>{{ input + 'test' }}</p>
-		<p>{{ rotNum }}</p>
+		<textarea class="input-field" v-model="rotInput" />
+		<input v-model.number="rotNumber" type="number" min="0" max="26" />
+		<p>Your input: {{ rotInput }}</p>
+		<p>Amount of Rotation: {{ rotNumber }}</p>
+		<p>Result: {{ rotatedText }}</p>
 	</section>
 </template>
 
 <script>
+import { ref, computed } from 'vue';
+import rotGenerator from '../helpers/rot-generator';
+
 export default {
-	data() {
+	setup() {
+		const rotInput = ref('Replace or rotate me!');
+		const rotNumber = ref(0);
+
+		// computed must take a function, use when defining state that relies on other state
+		const rotatedText = computed(() => rotGenerator(rotInput.value, rotNumber.value));
+
 		return {
-			input: '',
-			rotNum: 0,
+			rotInput,
+			rotNumber,
+			rotatedText,
 		};
 	},
 };
