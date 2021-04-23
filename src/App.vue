@@ -1,11 +1,29 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view/>
+  <Header />
+	<router-view />
 </template>
 
-<style>
+<script>
+import Header from './components/Header';
 
+export default {
+	components: {
+		Header,
+	},
+};
+</script>
+
+<style>
+*,
+*:before,
+*:after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Roboto', sans-serif;
+}
+
+body {
+	background-color: #f3f4f6;
+}
 </style>

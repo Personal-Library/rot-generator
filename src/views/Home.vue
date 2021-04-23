@@ -1,5 +1,10 @@
 <template>
-	<h1>The Home Page</h1>
+	<h1>ROT# Generator</h1>
+	<p>
+		Insert your text, and select how many letters forward you would like to shift in the alphabet!
+		Based on the classic ROT13 code generator, I thought it would be nice to allow people to
+		generate a code based on any number of rotation!
+	</p>
 	<p>{{ counter }}</p>
 	<div class="button-group">
 		<button @click="incrementCounter">Increment</button>
