@@ -1,6 +1,6 @@
 <template>
 	<nav>
-		<h1>ROT#</h1>
+		<a href="/"><h1>ROT#</h1></a>
 		<div class="link-container">
 			<router-link to="/">Home</router-link>
 			<router-link to="/about">About</router-link>
