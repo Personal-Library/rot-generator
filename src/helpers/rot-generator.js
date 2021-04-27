@@ -14,15 +14,15 @@ const rotGenerator = (string, rotation) => {
 				newCharCode -= 26;
 			}
 			result += String.fromCharCode(newCharCode);
-		}
-
-		if (charCode >= 97 && charCode <= 122) {
+		} else if (charCode >= 97 && charCode <= 122) {
 			// handle lowercase letters
 			let newCharCode = charCode + rotation;
 			if (newCharCode > 122) {
 				newCharCode -= 26;
 			}
 			result += String.fromCharCode(newCharCode);
+		} else {
+			result += string[i]
 		}
 	}
 	return result;
