@@ -23,14 +23,14 @@ const rotDescriber = (string) => {
 			};
 			alphabetEnum.push(alphabetObject);
 		} else {
-      const symbolObject = {
-        character: string[i],
-        position: '#'
-      }
-      alphabetEnum.push(symbolObject);
-    }
+			const symbolObject = {
+				character: string[i],
+				position: '#',
+			};
+			alphabetEnum.push(symbolObject);
+		}
 	}
-  return alphabetEnum;
+	return alphabetEnum;
 };
 
 // const sampleText = 'abcde ABCDE !@#$%^&';
