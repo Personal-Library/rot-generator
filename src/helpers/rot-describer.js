@@ -1,40 +1,46 @@
-/**
- * Uppercase letters are between 65 (A) and 90 (Z)
- * Lowercase letters are between 97 (a) and 122 (z)
- */
+import { LOWER_ABC_START, LOWER_ABC_END, UPPER_ABC_START, UPPER_ABC_END } from '../constants';
 
+/**
+ * This ROT describer furthers analysis by taking any string and enumerating each letter
+ * along with its position in the alphabet. It ignores non-alphabetical characters by
+ * substituting a '#' in place for position.
+ */
 const rotDescriber = (string) => {
-	const alphabetEnum = [];
+	const descriptionArray = [];
 
 	for (let i = 0; i < string.length; i++) {
 		const currentCharCode = string.charCodeAt(i);
-		if (currentCharCode >= 65 && currentCharCode <= 90) {
+		if (currentCharCode >= UPPER_ABC_START && currentCharCode <= UPPER_ABC_END) {
 			// handle uppercase letters
 			const alphabetObject = {
 				character: string[i],
-				position: currentCharCode - 65 + 1,
+
+				// +1 adjusts the position so that it is not zero-indexed
+				position: currentCharCode - UPPER_ABC_START + 1,
 			};
-			alphabetEnum.push(alphabetObject);
-		} else if (currentCharCode >= 97 && currentCharCode <= 122) {
+			descriptionArray.push(alphabetObject);
+		} else if (currentCharCode >= LOWER_ABC_START && currentCharCode <= LOWER_ABC_END) {
 			// handle lowercase letters
 			const alphabetObject = {
 				character: string[i],
-				position: currentCharCode - 97 + 1,
+
+				// +1 adjusts the position so that it is not zero-indexed
+				position: currentCharCode - LOWER_ABC_START + 1,
 			};
-			alphabetEnum.push(alphabetObject);
+			descriptionArray.push(alphabetObject);
 		} else {
-			const symbolObject = {
+			const nonAlphabetObject = {
 				character: string[i],
 				position: '#',
 			};
-			alphabetEnum.push(symbolObject);
+			descriptionArray.push(nonAlphabetObject);
 		}
 	}
-	return alphabetEnum;
+	return descriptionArray;
 };
 
-// const sampleText = 'abcde ABCDE !@#$%^&';
-// const result = rotDescriber(sampleText);
-// console.log(result);
+// const sampleText = 'abcdefghijklABCDEFGHIJKL !@#$%^&0123456';
+// const sampleResult = rotDescriber(sampleText);
+// console.log(sampleResult);
 
 export default rotDescriber;
