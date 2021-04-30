@@ -33,6 +33,9 @@ const rotDescriber = (string) => {
 				character: string[i],
 				position: '#',
 			};
+			if (string[i] === ' ') {
+				nonAlphabetObject.character = "' '";
+			}
 			descriptionArray.push(nonAlphabetObject);
 		}
 	}

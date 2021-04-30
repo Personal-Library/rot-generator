@@ -1,28 +1,32 @@
-/**
- * Uppercase letters are between 65 (A) and 90 (Z)
- * Lowercase letters are between 97 (a) and 122 (z)
- */
+import {
+	LOWER_ABC_START,
+	LOWER_ABC_END,
+	UPPER_ABC_START,
+	UPPER_ABC_END,
+	ABC_LENGTH,
+} from '../constants';
+
 const rotGenerator = (string, rotation) => {
 	let result = '';
 
 	for (let i = 0; i < string.length; i++) {
 		const charCode = string.charCodeAt(i);
-		if (charCode >= 65 && charCode <= 90) {
+		if (charCode >= UPPER_ABC_START && charCode <= UPPER_ABC_END) {
 			// handle uppercase letters
 			let newCharCode = charCode + rotation;
-			if (newCharCode > 90) {
-				newCharCode -= 26;
+			if (newCharCode > UPPER_ABC_END) {
+				newCharCode -= ABC_LENGTH;
 			}
 			result += String.fromCharCode(newCharCode);
-		} else if (charCode >= 97 && charCode <= 122) {
+		} else if (charCode >= LOWER_ABC_START && charCode <= LOWER_ABC_END) {
 			// handle lowercase letters
 			let newCharCode = charCode + rotation;
-			if (newCharCode > 122) {
-				newCharCode -= 26;
+			if (newCharCode > LOWER_ABC_END) {
+				newCharCode -= ABC_LENGTH;
 			}
 			result += String.fromCharCode(newCharCode);
 		} else {
-			result += string[i]
+			result += string[i];
 		}
 	}
 	return result;
