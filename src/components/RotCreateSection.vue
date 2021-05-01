@@ -68,7 +68,6 @@ export default {
 }
 
 .input-wrapper {
-	margin-left: 1em;
 	margin-top: 1.5em;
 	display: flex;
 	justify-content: center;

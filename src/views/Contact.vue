@@ -1,13 +1,15 @@
 <template>
-  
+	<ContactContent />
 </template>
 
 <script>
+import ContactContent from '../components/ContactContent';
+
 export default {
-// TODO
-}
+	components: {
+		ContactContent,
+	},
+};
 </script>
 
-<style>
-
-</style>
+<style></style>

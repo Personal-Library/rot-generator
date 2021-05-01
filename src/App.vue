@@ -1,19 +1,19 @@
 <template>
 	<div class="container">
-		<Header />
+		<TheHeader />
 		<router-view />
-		<Footer />
+		<TheFooter />
 	</div>
 </template>
 
 <script>
-import Header from './components/Header';
-import Footer from './components/Footer';
+import TheHeader from './components/TheHeader';
+import TheFooter from './components/TheFooter';
 
 export default {
 	components: {
-		Header,
-		Footer,
+		TheHeader,
+		TheFooter,
 	},
 };
 </script>
@@ -33,13 +33,17 @@ html {
 }
 
 body {
-	padding: 1em;
 	background-color: #f3f4f6;
 	color: #111827;
 }
 
 .container {
 	margin: 0 auto;
+	padding: 1em;
 	max-width: 864px;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
 </style>

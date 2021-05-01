@@ -10,24 +10,29 @@
 				<li><router-link to="/contact">Contact</router-link></li>
 			</ul>
 		</div>
+		<div class="developed-with">
+			<a href="https://github.com/Personal-Library/rot-generator" target="_blank" rel="noreferrer"
+				>Developed with ❤️ on Github</a
+			>
+		</div>
 	</footer>
 </template>
 
 <script>
 export default {
 	setup() {
-		const scrollToTop = () => window.scrollTo(0,0);
+		const scrollToTop = () => window.scrollTo(0, 0);
 
 		return {
-			scrollToTop
-		}
-	}
-}
+			scrollToTop,
+		};
+	},
+};
 </script>
 
 <style scoped>
 footer {
-	margin-top: 4em;
+	margin-top: 6em;
 }
 
 a {
@@ -42,9 +47,20 @@ a:visited {
 ul {
 	margin-top: 1em;
 	list-style: none;
+	display: flex;
+	justify-content: space-evenly;
 }
 
 li {
 	margin-top: 0.5em;
+}
+
+.logo-container {
+	text-align: center;
+}
+
+.developed-with {
+	width: fit-content;
+	margin: 3em auto 0 auto;
 }
 </style>

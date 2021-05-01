@@ -1,4 +1,13 @@
 <template>
-	<h1>The About Page</h1>
-	<p>This is the Vue Router in action</p>
+	<AboutContent />
 </template>
+
+<script>
+import AboutContent from '../components/AboutContent';
+
+export default {
+	components: {
+		AboutContent,
+	},
+};
+</script>

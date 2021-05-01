@@ -13,10 +13,12 @@
 .logo {
 	margin: 0;
 	padding: 0;
+	box-shadow: none;
 }
 
 .logo:hover {
 	background-color: inherit;
+	box-shadow: none;
 }
 
 nav {
@@ -29,8 +31,9 @@ nav {
 a {
 	text-decoration: none;
 	color: inherit;
-	margin-left: 0.5em;
+	margin-left: 1em;
 	padding: 0.5em;
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
 }
 
 a:visited {
@@ -38,6 +41,12 @@ a:visited {
 }
 
 a:hover {
-	background-color: #bfdbfe;
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+@media (min-width: 768px) {
+	a {
+		margin-left: 4em;
+	}
 }
 </style>
