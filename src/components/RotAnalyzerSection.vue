@@ -1,7 +1,7 @@
 <template>
 	<h2 class="analyzer-header">ROT Analyzer</h2>
 	<p class="analyzer-description">
-		Do you have some ROT text you want to decode? Paste the text into the field above, and keep
+		Do you have some ROT text you want to decode? Paste the text into the field below, and keep
 		clicking the button until the text is readable. If you have clicked 26 times and the text could
 		not be read at any point, then it is not ROT encoded.
 	</p>
@@ -69,6 +69,10 @@ export default {
 	padding: 0.5em;
 	width: min(100%, 600px);
 	min-height: 200px;
+	background-color: #f9fafb;
+	border: none;
+	resize: none;
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
 }
 
 .analyzer-header {
@@ -84,8 +88,16 @@ export default {
 .button-group button {
 	display: block;
 	width: 200px;
-	margin: 1em 0;
+	margin: 1.5em 1em;
 	padding: 0.5em 1em;
+	border: none;
+	border-radius: 10px;
+	background-color: #f9fafb;
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.button-group button:hover {
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
 }
 
 .analyzer-response-text p {

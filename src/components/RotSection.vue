@@ -1,14 +1,16 @@
 <template>
 	<section class="rot-section">
 		<textarea class="input-field" v-model="rotInput" />
-		<input
-			@keydown="changeCount"
-			class="input-number"
-			v-model.number="rotNumber"
-			type="number"
-			min="0"
-			max="26"
-		/>
+		<div class="input-wrapper">
+			<input
+				@keydown="changeCount"
+				class="input-number"
+				v-model.number="rotNumber"
+				type="number"
+				min="0"
+				max="26"
+			/>
+		</div>
 		<div class="rot-response-block">
 			<h3>Result</h3>
 			<p>Amount of Rotation: {{ rotNumber }}</p>
@@ -26,7 +28,7 @@ import rotGenerator from '../helpers/rot-generator';
 
 export default {
 	setup() {
-		const rotInput = ref('Replace or rotate me!');
+		const rotInput = ref('Replace and rotate me!');
 		const rotNumber = ref(0);
 
 		// computed must take a function, use when defining state that relies on other state
@@ -59,12 +61,27 @@ export default {
 	padding: 0.5em;
 	width: min(100%, 600px);
 	min-height: 200px;
+	border: none;
+	resize: none;
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+	background-color: #f9fafb;
+}
+
+.input-wrapper {
+	margin-left: 1em;
+	margin-top: 1.5em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: fit-content;
+	padding: 1em;
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+	background-color: #f9fafb;
 }
 
 .input-number {
-	margin-top: 1em;
-	padding: 1em;
-	width: min(100%, 600px);
+	border: none;
+	background-color: #f9fafb;
 }
 
 .rot-response-block {

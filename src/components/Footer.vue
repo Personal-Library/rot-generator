@@ -5,17 +5,29 @@
 		</div>
 		<div class="link-container">
 			<ul>
-				<li><a href="/">Home</a></li>
-				<li><a href="/about">About</a></li>
-				<li><a href="/contact">Contact</a></li>
+				<li @click="scrollToTop"><router-link to="/">Home</router-link></li>
+				<li><router-link to="/about">About</router-link></li>
+				<li><router-link to="/contact">Contact</router-link></li>
 			</ul>
 		</div>
 	</footer>
 </template>
 
-<style>
+<script>
+export default {
+	setup() {
+		const scrollToTop = () => window.scrollTo(0,0);
+
+		return {
+			scrollToTop
+		}
+	}
+}
+</script>
+
+<style scoped>
 footer {
-	margin-top: 2em;
+	margin-top: 4em;
 }
 
 a {
@@ -28,6 +40,11 @@ a:visited {
 }
 
 ul {
+	margin-top: 1em;
 	list-style: none;
+}
+
+li {
+	margin-top: 0.5em;
 }
 </style>

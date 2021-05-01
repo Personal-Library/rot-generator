@@ -13,7 +13,7 @@ import Footer from './components/Footer';
 export default {
 	components: {
 		Header,
-		Footer
+		Footer,
 	},
 };
 </script>
@@ -28,6 +28,10 @@ export default {
 	font-family: 'Roboto', sans-serif;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 body {
 	padding: 1em;
 	background-color: #f3f4f6;
@@ -36,6 +40,6 @@ body {
 
 .container {
 	margin: 0 auto;
-	max-width: 1024px;
+	max-width: 864px;
 }
 </style>

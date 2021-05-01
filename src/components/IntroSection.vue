@@ -15,7 +15,7 @@
 }
 
 .hero-description {
-	margin-top: 1em;
+	margin-top: 2em;
 	line-height: 1.5em;
 	max-width: 65ch;
 }
