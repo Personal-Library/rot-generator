@@ -14,13 +14,19 @@
 </template>
 
 <style>
+footer {
+	margin-top: 2em;
+}
+
 a {
 	text-decoration: none;
 	color: inherit;
 }
+
 a:visited {
 	color: inherit;
 }
+
 ul {
 	list-style: none;
 }

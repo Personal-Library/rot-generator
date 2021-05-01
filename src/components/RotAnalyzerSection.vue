@@ -1,15 +1,19 @@
 <template>
-	<h2>ROT Analyzer</h2>
-	<textarea class="input-field" v-model="text" />
-	<button @click="handleClick('forward')">Rotate Forward</button>
-	<button @click="handleClick('backward')">Rotate Backward</button>
-	<p>
+	<h2 class="analyzer-header">ROT Analyzer</h2>
+	<p class="analyzer-description">
 		Do you have some ROT text you want to decode? Paste the text into the field above, and keep
 		clicking the button until the text is readable. If you have clicked 26 times and the text could
 		not be read at any point, then it is not ROT encoded.
 	</p>
-	<p>{{ analyzedText }}</p>
-	<p>{{ calculatedRotations }}</p>
+	<textarea class="input-field" v-model="text" />
+	<div class="button-group">
+		<button @click="handleClick('forward')">Rotate Forward</button>
+		<button @click="handleClick('backward')">Rotate Backward</button>
+	</div>
+	<div class="analyzer-response-text">
+		<p>{{ calculatedRotations }}</p>
+		<p>{{ analyzedText }}</p>
+	</div>
 </template>
 
 <script>
@@ -59,9 +63,32 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .input-field {
+	margin-top: 2em;
+	padding: 0.5em;
 	width: min(100%, 600px);
 	min-height: 200px;
+}
+
+.analyzer-header {
+	margin-top: 2em;
+}
+
+.analyzer-description {
+	margin-top: 1em;
+	line-height: 1.5em;
+	max-width: 65ch;
+}
+
+.button-group button {
+	display: block;
+	width: 200px;
+	margin: 1em 0;
+	padding: 0.5em 1em;
+}
+
+.analyzer-response-text p {
+	margin-top: 1em;
 }
 </style>
