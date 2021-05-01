@@ -10,7 +10,8 @@
 			but this project serves mostly as a learning experience for both me and the user! The ROT
 			describer tool will allow users to analyze the alphabetical position of each of the characters
 			within a string, which can be useful for decoding purposes. Please enjoy, and click the
-			contact page or submit an issue request on Github if you have any issues!
+			contact page or submit an issue request on Github if you have any issues or feature
+			suggestions!
 		</p>
 	</div>
 </template>
